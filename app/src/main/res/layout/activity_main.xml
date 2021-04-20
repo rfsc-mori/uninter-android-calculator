@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtDisplay"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:fontFamily="monospace"
+        android:gravity="center|right"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="0"
+        android:textSize="64sp"
+        app:autoSizeMaxTextSize="74sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtErrorDisplay"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:fontFamily="monospace"
+        android:gravity="center|left"
+        android:lines="2"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="Erro:\nErro interno."
+        android:textSize="64sp"
+        android:visibility="invisible"
+        app:autoSizeMaxTextSize="74sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDisplay" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDisplay">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="0.5"
+            android:shrinkColumns="*"
+            android:stretchColumns="*">
+
+            <TableRow android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btnFnReset"
+                    android:layout_height="match_parent"
+                    android:layout_span="1"
+                    android:onClick="calcFunction"
+                    android:text="CLR" />
+
+                <Space
+                    android:layout_height="match_parent"
+                    android:layout_span="1" />
+
+                <Button
+                    android:id="@+id/btnOpDiv"
+                    android:layout_height="match_parent"
+                    android:layout_span="1"
+                    android:onClick="calcOperation"
+                    android:text="/" />
+
+                <Button
+                    android:id="@+id/btnOpMul"
+                    android:layout_height="match_parent"
+                    android:layout_span="1"
+                    android:onClick="calcOperation"
+                    android:text="*" />
+
+            </TableRow>
+
+            <TableRow android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btnNumSeven"
+                    android:layout_height="match_parent"
+                    android:layout_span="1"
+                    android:onClick="calcInputDigit"
+                    android:text="7" />
+
+                <Button
+                    android:id="@+id/btnNumEight"
+                    android:layout_height="match_parent"
+                    android:layout_span="1"
+                    android:onClick="calcInputDigit"
+                    android:text="8" />
+
+                <Button
+                    android:id="@+id/btnNumNine"
+                    android:layout_height="match_parent"
+                    android:layout_span="1"
+                    android:onClick="calcInputDigit"
+                    android:text="9" />
+
+                <Button
+                    android:id="@+id/btnOpSub"
+                    android:layout_height="match_parent"
+                    android:layout_span="1"
+                    android:onClick="calcOperation"
+                    android:text="-" />
+
+            </TableRow>
+
+            <TableRow android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btnNumFour"
+                    android:layout_height="match_parent"
+                    android:layout_span="1"
+                    android:onClick="calcInputDigit"
+                    android:text="4" />
+
+                <Button
+                    android:id="@+id/btnNumFive"
+                    android:layout_height="match_parent"
+                    android:layout_span="1"
+                    android:onClick="calcInputDigit"
+                    android:text="5" />
+
+                <Button
+                    android:id="@+id/btnNumSix"
+                    android:layout_height="match_parent"
+                    android:layout_span="1"
+                    android:onClick="calcInputDigit"
+                    android:text="6" />
+
+                <Button
+                    android:id="@+id/btnOpAdd"
+                    android:layout_height="match_parent"
+                    android:layout_span="1"
+                    android:onClick="calcOperation"
+                    android:text="+" />
+
+            </TableRow>
+
+            <TableRow android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btnNumOne"
+                    android:layout_height="match_parent"
+                    android:layout_span="1"
+                    android:onClick="calcInputDigit"
+                    android:text="1" />
+
+                <Button
+                    android:id="@+id/btnNumTwo"
+                    android:layout_height="match_parent"
+                    android:layout_span="1"
+                    android:onClick="calcInputDigit"
+                    android:text="2" />
+
+                <Button
+                    android:id="@+id/btnNumThree"
+                    android:layout_height="match_parent"
+                    android:layout_span="1"
+                    android:onClick="calcInputDigit"
+                    android:text="3" />
+
+                <Space
+                    android:layout_height="match_parent"
+                    android:layout_span="1" />
+            </TableRow>
+
+            <TableRow android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btnNumZero"
+                    android:layout_height="match_parent"
+                    android:layout_span="2"
+                    android:onClick="calcInputDigit"
+                    android:text="0" />
+
+                <Button
+                    android:id="@+id/btnDot"
+                    android:layout_height="match_parent"
+                    android:layout_span="1"
+                    android:onClick="calcInputDigit"
+                    android:text="." />
+
+                <Button
+                    android:id="@+id/btnFnResult"
+                    android:layout_height="match_parent"
+                    android:layout_span="1"
+                    android:onClick="calcOperation"
+                    android:text="=" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
